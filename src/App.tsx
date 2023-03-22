@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './App.css'
+import User from '@/pages/user'
 
 function App() {
 	useEffect(() => {
@@ -9,6 +10,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<User />
 
 		</div>
 	)
