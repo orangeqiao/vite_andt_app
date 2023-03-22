@@ -11,6 +11,7 @@ function App() {
 	return (
 		<div className="App">
 			<User />
+			{import.meta.env.VITE_ENV}
 
 		</div>
 	)
