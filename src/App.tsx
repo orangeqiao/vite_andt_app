@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './App.css'
+import 'antd/dist/reset.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '@/router/index';
 import RouterBeforeEach from './router/RouterBefore';
