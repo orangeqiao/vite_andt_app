@@ -29,7 +29,7 @@ const routes: Array<routeType> = [
 		component: () => import('@/pages/user'),
 		meta: {
 			title: "用户",
-			auth:true
+			auth:false
 		}
 	},
 	{
