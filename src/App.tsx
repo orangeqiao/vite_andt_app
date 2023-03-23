@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import './App.css'
-import User from '@/pages/user'
+import { BrowserRouter } from 'react-router-dom';
+import Routes from '@/router/index';
+import RouterBeforeEach from './router/RouterBefore';
 
 function App() {
 	useEffect(() => {
@@ -10,9 +12,11 @@ function App() {
 
 	return (
 		<div className="App">
-			<User />
-			{import.meta.env.VITE_ENV}
-
+			<BrowserRouter>
+				<RouterBeforeEach>
+					<Routes />
+				</RouterBeforeEach>
+			</BrowserRouter>
 		</div>
 	)
 }
