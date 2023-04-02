@@ -36,7 +36,7 @@ const routes: Array<routeType> = [
 		path: '/searchForm',
 		component: () => import('@/pages/FormPage/Index'),
 		meta: {
-			title: "用户",
+			title: "搜索表单",
 			auth:false
 		}
 	},

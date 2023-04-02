@@ -8,6 +8,8 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 function App() {
 	useEffect(() => {
 		console.log(import.meta.env.VITE_ENV);
@@ -16,11 +18,13 @@ function App() {
 
 	return (
 		<div className="App">
+			   <LocalizationProvider dateAdapter={AdapterDayjs}>
 			<BrowserRouter>
 				<RouterBeforeEach>
 					<Routes />
 				</RouterBeforeEach>
 			</BrowserRouter>
+			</LocalizationProvider>
 		</div>
 	)
 }
