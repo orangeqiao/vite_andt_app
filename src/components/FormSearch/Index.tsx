@@ -90,37 +90,25 @@ function FormSearch({ fields, initialValues, onSubmit, onReset, onChange }: Form
 										},
 									}}
 								/>
-								: field.type === 'select' ?
-									<TextField
-										InputLabelProps={{
-											shrink: true,
-										}}
-										select
-										sx={{ width: 210 }}
-										name={field.name}
-										label={field.label}
-										value={formData[field.name]}
-										onChange={(event) => handleChange(event.target.name, event.target.value)}
-									>
-										{field.options ? field.options.map((option) => (
-											<MenuItem key={option.value} value={option.value}>
-												{option.label}
-											</MenuItem>
-										)) : null}
-									</TextField> 
-								
-									: <TextField
-										name={field.name}
-										label={field.label}
-										InputLabelProps={{
-											shrink: true,
-										}}
-								
-										type={field.type || 'text'}
-										variant="outlined"
-										value={formData[field.name]}
-										onChange={(event) => handleChange(event.target.name, event.target.value)}
-									/>
+								:<TextField
+									name={field.name}
+									label={field.label}
+									InputLabelProps={{
+										shrink: true,
+									}}
+									sx={{ width: 210 }}
+									select={field.type === 'select'}
+									type={field.type}
+									variant="outlined"
+									value={formData[field.name]}
+									onChange={(event) => handleChange(event.target.name, event.target.value)}
+								>
+									{field.options ? field.options.map((option) => (
+										<MenuItem key={option.value} value={option.value}>
+											{option.label}
+										</MenuItem>
+									)) : null}
+								</TextField>
 						}
 
 					</Grid>
