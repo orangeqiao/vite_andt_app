@@ -33,6 +33,14 @@ const routes: Array<routeType> = [
 		}
 	},
 	{
+		path: '/searchForm',
+		component: () => import('@/pages/FormPage/Index'),
+		meta: {
+			title: "用户",
+			auth:false
+		}
+	},
+	{
 		path: '/login',
 		component: () => import('@/pages/login'),
 		meta: {
