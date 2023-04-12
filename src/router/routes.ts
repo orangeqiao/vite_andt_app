@@ -22,6 +22,7 @@ const routes: Array<routeType> = [
 		component: () => import('@/pages/about'),
 		meta: {
 			title: "关于",
+			auth:true
 		}
 	},
 	{
