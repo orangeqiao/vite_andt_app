@@ -1,24 +1,26 @@
 import React, { useRef } from 'react';
-import FormJson from '@/components/FormJson/Index';
+import FormSearch from '@/components/FormSearch/Index';
 import { SearchField, SearchFormValues } from '@/interface/from';
 
 const fields: SearchField[] = [
 	{ label: 'Name', name: 'name', type: 'text' },
-	{ label: 'username', name: 'username', type: 'text' },
-	// {
-	// 	label: 'name2', name: 'name2', type: 'select', options: [{ value: '1', label: 'Option 1' },
-	// 	{ value: '2', label: 'Option 2' },
-	// 	{ value: '3', label: 'Option 3' },]
-	// },
+	{ label: 'Name', name: 'name1', type: 'text' },
+	{
+		label: 'name2', name: 'name2', type: 'select', options: [{ value: '1', label: 'Option 1' },
+		{ value: '2', label: 'Option 2' },
+		{ value: '3', label: 'Option 3' },]
+	},
 	{ label: 'Age', name: 'age', type: 'number' },
-	// { label: 'Date', name: 'date', type: 'date' },
+	{ label: 'Date', name: 'date', type: 'date' },
 ];
 
 const FormSearchPage: React.FC = () => {
 	const handleSearch = (filters: SearchFormValues) => {
 		console.log('Search filters:', filters);
 	};
-
+	const handleReset = (filters: SearchFormValues) => {
+		console.log('handleReset:', filters);
+	};
 	const handleChange = (name: string, value: any) => {
 		console.log('handleChange:', name, value);
 	};
@@ -36,7 +38,7 @@ const FormSearchPage: React.FC = () => {
 	return (
 		<div>
 			<div onClick={handleClick}>改变form的值</div>
-			<FormJson   />
+			<FormSearch ref={searchRef} fields={fields} onSubmit={handleSearch} onReset={handleReset} onChange={handleChange} />
 		</div>
 	);
 };
