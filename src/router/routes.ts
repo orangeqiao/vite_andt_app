@@ -34,6 +34,14 @@ const routes: Array<routeType> = [
 		}
 	},
 	{
+		path: '/language',
+		component: () => import('@/pages/language'),
+		meta: {
+			title: "i18n语言切换",
+			auth:false
+		}
+	},
+	{
 		path: '/login',
 		component: () => import('@/pages/login'),
 		meta: {
