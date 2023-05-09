@@ -17,6 +17,8 @@
     "jsx": "react-jsx",
 		"paths": {
       "@/*": ["./src/*"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@utils": ["./src/utils/*"]
     }
   },
   "include": ["src"],

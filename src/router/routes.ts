@@ -49,6 +49,14 @@ const routes: Array<routeType> = [
 			auth:false
 		}
 	},
+	{
+		path: '/xfy-page/map',
+		component: () => import('@/pages/xfy-page/map'),
+		meta: {
+			title: "地图",
+			auth:false
+		}
+	},
 ]
 
 export default routes;

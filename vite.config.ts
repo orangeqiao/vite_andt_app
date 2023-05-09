@@ -10,8 +10,19 @@ export default defineConfig(({mode})=>{
 		plugins: [react()],
 		resolve: {
 			alias: {
-				'@': path.resolve(__dirname, './src')
+				'@': path.resolve(__dirname, './src'),
+				'@utils': path.resolve(__dirname, './src/utils'),
+				'@hooks': path.resolve(__dirname, './src/hooks/index')
 			}
+		},
+		css: {
+			// css预处理器
+			preprocessorOptions: {
+				less: {
+					charset: false,
+					additionalData: '@import "./src/assets/css/variables.less";',
+				},
+			},
 		},
 		server:{
 			port:3000,
